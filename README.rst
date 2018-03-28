@@ -1,3 +1,6 @@
+.. image:: https://travis-ci.org/seisman/sphinx-cjkspace.svg?branch=master
+    :target: https://travis-ci.org/seisman/sphinx-cjkspace
+
 sphinx-cjkspace
 ===============
 
