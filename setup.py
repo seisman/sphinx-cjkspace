@@ -18,6 +18,6 @@ setup(
     author_email='seisman.info@gmail.com',
     url='https://github.com/seisman/sphinx-cjkspace',
     license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(exclude=('tests', 'docs')),
+    install_requires=['sphinx', 'zhon'],
 )
-
