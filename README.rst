@@ -1,6 +1,15 @@
 .. image:: https://travis-ci.org/seisman/sphinx-cjkspace.svg?branch=master
     :target: https://travis-ci.org/seisman/sphinx-cjkspace
 
+.. image:: https://img.shields.io/github/release/seisman/sphinx-cjkspace.svg
+    :target: https://github.com/seisman/sphinx-cjkspace/releases
+
+.. image:: https://img.shields.io/pypi/v/sphinx-cjkspace.svg
+    :target: https://pypi.org/project/sphinx-cjkspace/
+
+.. image:: https://img.shields.io/github/license/seisman/sphinx-cjkspace.svg
+    :target: https://github.com/seisman/sphinx-cjkspace/blob/master/LICENSE
+
 sphinx-cjkspace
 ===============
 
