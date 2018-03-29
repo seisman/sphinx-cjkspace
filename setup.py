@@ -11,7 +11,7 @@ with open('LICENSE') as f:
 
 setup(
     name='sphinx-cjkspace',
-    version='0.1.1',
+    version='0.1.2',
     description='Python extension to remove extra spaces between CJK characters',
     long_description=readme,
     author='Dongdong Tian',

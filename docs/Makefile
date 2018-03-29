@@ -7,6 +7,7 @@ SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = sphinx-cjkspace
 SOURCEDIR     = .
 BUILDDIR      = _build
+BUILDER       = html
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -22,12 +23,15 @@ help:
 docs: clean
 	# without cjkspace extension
 	sed -i "s/'sphinx_cjkspace.cjkspace'/#'sphinx_cjkspace.cjkspace'/" conf.py
-	sed -i "s/效果演示（使用后）/效果演示（使用前）/" example.rst
-	make html
-	cp $(BUILDDIR)/html/example.html $(BUILDDIR)
+	sed -i "s/（使用后）/（使用前）/" example/*.rst
+	make $(BUILDER)
+	cp -r $(BUILDDIR)/$(BUILDER)/example/ $(BUILDDIR)
 
 	# with cjkspace extension
 	sed -i "s/#'sphinx_cjkspace.cjkspace'/'sphinx_cjkspace.cjkspace'/" conf.py
-	sed -i "s/效果演示（使用前）/效果演示（使用后）/" example.rst
-	make html
-	mv $(BUILDDIR)/example.html $(BUILDDIR)/html/example2.html
+	sed -i "s/（使用前）/（使用后）/" example/*.rst
+	make $(BUILDER)
+	mv $(BUILDDIR)/example/ $(BUILDDIR)/$(BUILDER)/example2/
+
+serve: docs
+	cd $(BUILDDIR)/$(BUILDER) && python -m http.server

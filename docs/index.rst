@@ -3,11 +3,9 @@ sphinx-cjkspace
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: 目录:
 
-   效果演示 <example>
-
-
+   example/index
 
 Indices and tables
 ==================

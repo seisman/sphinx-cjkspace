@@ -11,22 +11,35 @@ def setup(app):
 def cjkspacing(text):
     '''Fix spacing issue related to newlines of CJK characters.
 
-    The idea is to split input text by newlines and then join them to a string.
+    This function tries its best to remove the annoying whitespaces between CJK
+    characters due to newlines, while keeping everything else untouched.
     '''
-    # split input text into lines
+
+    def _check_cases(current_line, previous_line):
+        # something strange happens
+        if len(current_line) == 0 or len(previous_line) == 0:
+            return '\n'
+        if not is_ascii(previous_line[-1]) and not is_ascii(current_line[0]):
+            return ''
+        elif is_cjk_punctuation(previous_line[-1]) and is_ascii(current_line[0]):
+            return ''
+        else:
+            return '\n'
+
+    # split input text to several lines
     lines = text.splitlines()
-    # deal with exceptions
+    if len(lines) <= 1:  # empty text or only one line. Do nothing.
+        return text
+
+    # join lines by `\n' to restore original input text
+    text_out = lines[0]
     for i in range(1, len(lines)):  # start from 1
-        # current line starts with ASCII and last line starts with hanzi
-        try:
-            if is_ascii(lines[i][0]) and not is_cjk_punctuation(lines[i-1][-1]):
-                lines[i] = " " + lines[i]
-            if is_ascii(lines[i][-1]) and not is_ascii(lines[i+1][0]):
-                lines[i] = lines[i] + " "
-        except IndexError:
-            pass
-    text = "".join(lines)
-    return text
+        seperator = _check_cases(lines[i], lines[i-1])
+        text_out += seperator + lines[i]
+    if text.endswith('\n'):
+        text_out += '\n'
+
+    return text_out
 
 
 class ParagraphVisitor(NodeVisitor):

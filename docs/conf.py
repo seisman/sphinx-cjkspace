@@ -8,7 +8,7 @@
 project = 'sphinx-cjkspace'
 author = 'Dongdong Tian'
 copyright = '2018, {}'.format(author)
-version = '0.1.1'
+version = '0.1.2'
 release = version
 
 
@@ -31,6 +31,11 @@ pygments_style = 'sphinx'
 
 
 # -- Options for HTML output -------------------------------------------------
-html_theme = 'alabaster'
-# html_theme_options = {}
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 html_static_path = ['_static']
+html_theme_options = {
+    'prev_next_buttons_location': 'none',
+    'navigation_depth': 2,
+}
