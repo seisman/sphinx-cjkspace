@@ -15,3 +15,22 @@ sphinx-cjkspace
 
 A Sphinx extention that remove extra spaces between CJK characters due to
 newlines in reStructuredText files.
+
+Installation
+-------------
+
+::
+
+    pip install sphinx-cjkspace
+
+
+Usage
+-----
+
+Add it as sphinx extensions in `conf.py`:
+
+.. code:: python
+
+    extensions = [
+        'sphinx_cjkspace.cjkspace',
+    ]
