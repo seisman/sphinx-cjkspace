@@ -1,10 +1,10 @@
 段落测试（使用后）
 ==================
 
-点击“使用前”和“使用后”以对比效果，点击右上角“View page source”以查看本页源码。
+.. note::
 
-`使用后 </example/paragraph.html>`_ | \
-`使用前 </example2/paragraph.html>`_
+    点击 `使用后 </example/paragraph.html>`_ 和 `使用前 </example2/paragraph.html>`_
+    以对比效果，点击右上角“View page source”以查看本页源码。
 
 可以正确处理
 ------------

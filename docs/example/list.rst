@@ -1,10 +1,11 @@
 列表测试（使用后）
 ==================
 
-点击“使用前”和“使用后”以对比效果，点击右上角“View page source”以查看本页源码。
+.. note::
 
-`使用后 </example/list.html>`_ | \
-`使用前 </example2/list.html>`_
+    点击 `使用后 </example/list.html>`_ 和 `使用前 </example2/list.html>`_
+    以对比效果，点击右上角“View page source”以查看本页源码。
+
 
 可以正确处理
 ~~~~~~~~~~~~

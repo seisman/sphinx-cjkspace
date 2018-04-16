@@ -6,10 +6,3 @@ sphinx-cjkspace
    :caption: 目录:
 
    example/index
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
