@@ -6,6 +6,12 @@ from docutils.nodes import *
 
 def setup(app):
     app.connect('doctree-resolved', process_chinese_paragraph)
+    metadata = {
+        "version": '0.1.3',
+        "parallel_read_safe": True,
+        "parallel_write_safe": True,
+    }
+    return metadata
 
 
 def cjkspacing(text):
