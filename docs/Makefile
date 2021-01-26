@@ -22,14 +22,14 @@ help:
 
 docs: clean
 	# without cjkspace extension
-	sed -i "s/'sphinx_cjkspace.cjkspace'/#'sphinx_cjkspace.cjkspace'/" conf.py
-	sed -i "s/（使用后）/（使用前）/" example/*.rst
+	sed -i.bak "s/'sphinx_cjkspace.cjkspace'/#'sphinx_cjkspace.cjkspace'/" conf.py
+	sed -i.bak "s/（使用后）/（使用前）/" example/*.rst
 	make $(BUILDER)
 	cp -r $(BUILDDIR)/$(BUILDER)/example/ $(BUILDDIR)
 
 	# with cjkspace extension
-	sed -i "s/#'sphinx_cjkspace.cjkspace'/'sphinx_cjkspace.cjkspace'/" conf.py
-	sed -i "s/（使用前）/（使用后）/" example/*.rst
+	sed -i.bak "s/#'sphinx_cjkspace.cjkspace'/'sphinx_cjkspace.cjkspace'/" conf.py
+	sed -i.bak "s/（使用前）/（使用后）/" example/*.rst
 	make $(BUILDER)
 	mv $(BUILDDIR)/example/ $(BUILDDIR)/$(BUILDER)/example2/
 
